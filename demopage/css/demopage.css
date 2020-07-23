@@ -1,0 +1,356 @@
+body{
+    background-color: rgb(151, 216, 241);
+    background: url('../img/bk_img.jpg');
+    background-size: cover;
+    background-position: 450px;
+    position: relative;
+}
+
+.obscuration{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 110;
+    background-color: #000000cc;
+    visibility: hidden;
+}
+.obscuration .login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+}
+.obscuration .login .close {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.obscuration .login .qqlogin {
+    width: 185px;
+    height: 50px;
+    position: absolute;
+    left: 280px;
+    top: 147px;
+    border-radius: 30px ;
+    padding:0 10px ;
+    cursor: pointer;
+}
+.obscuration .login .wxlogin {
+
+    width: 185px;
+    height: 50px;
+    position: absolute;
+    left: 60px;
+    top: 147px;
+    border-radius: 30px ;
+    padding:0 10px ;
+    cursor: pointer;
+}
+.wrapper .above {
+    height: 50px;
+    background-color:rgba(8, 0, 8, .8);
+    line-height: 50px;
+    position: relative;
+}
+.wrapper .above .toplogo{
+    width: 200px;
+    float: left;
+    height: 50px;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.wrapper .above .toplogo img {
+    width: 150px;
+    height: 50px;
+}
+.wrapper .above .topmain{
+    width: 700px;
+    height: 50px;
+    color: #cfdb26;
+    float: left;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wrapper .above .topfoot{
+    float: right;
+    height: 50px;
+    margin: 0 40px;
+    color: #fefefe;
+    cursor: pointer;
+}
+.wrapper .above .topfoot span {
+    height: 50px;
+    width: 60px;
+    margin-right: 15px;
+    float: left;
+    background-image: url('../img/character.png');
+    background-size: 45px;
+    background-position: 50%;
+    border-radius: 50%;
+    border: #f1f3f4 solid;
+    box-sizing: border-box;
+}
+.wrapper .above .topfoot:hover {
+    color: #bba066;
+}
+
+
+
+
+div.logo{
+    width: 1000px;
+    height: 200px;
+ 
+    margin: 0 auto;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.wrapper .header {
+    height: auto;
+   
+}
+.container{
+    width: 980px;
+    margin: 5px auto 0px;
+
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+.container .menu{
+    background: linear-gradient(#3d3838cc, #999999);
+    height: 48px;
+    border: 15px groove rgb(196, 231, 245);
+}
+.menu li{
+    
+    min-width: 140px;
+    background: linear-gradient(#3d3838cc, #999999);
+}
+ .menu>li{
+    margin-left: 40px;
+    float: left;
+    position: relative;
+}
+.menu>li:first-child{
+    border-radius: 5px 0 0 0 ;
+}
+.menu a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color:black;
+    font-size: 18px;
+    line-height: 36px;
+    border-left: 3px solid rgba(0, 0, 0, 0);
+    text-transform: uppercase;
+
+
+}
+.menu .text{
+    color: #cfb53b;
+}
+.menu li:hover{
+    background: linear-gradient(#111111,#424242);
+}
+.menu li:hover>a{
+   color:white;
+   border-left: 3px solid #ffffff;
+}
+/* 找到菜单栏第四个li并赋予其独特的样式 */
+.menu >li:nth-child(4):hover>a{
+    color:rgb(225, 26, 240);
+    background-color:rgb(231, 167, 236);
+}
+.submenu{
+    z-index: 100;
+    position: absolute;
+    max-height: 0;
+    left: 0;
+    top: 100%;
+    perspective: 400px;
+}
+.submenu li{
+   visibility: hidden;
+   transform: rotate3d(0,1,0,90deg);
+   transition: all 0.5s;
+}
+
+
+.menu>li:hover .submenu{
+    max-height: 1000px;
+  
+}
+.menu>li:hover .submenu li{
+    visibility:visible;
+    transform: rotate3d(0,0,0,0deg);
+}
+
+.submenu li:nth-child(1) {
+
+    transition-delay: 0ms;
+}
+.submenu li:nth-child(2) {
+
+    transition-delay: 100ms;
+}
+.submenu li:nth-child(3) {
+
+    transition-delay: 200ms;
+}
+.submenu li:nth-child(4) {
+
+    transition-delay: 300ms;
+}
+.submenu li:nth-child(5) {
+
+    transition-delay: 400ms;
+}
+
+
+/* main */
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.wrapper .main {
+    width: 950px;
+    border: 15px groove #a18d64;
+    position: relative;
+    height: 650px;
+    background: url(../img/rotate_bg.png) no-repeat ;
+}
+/* 视频 */
+video{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 460px;
+    height: 280px;
+}
+.video{
+    width: 460px;
+    height: 300px;
+}
+.video .message {
+    height: 41px;
+    line-height: 20.5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    color: sandybrown;
+    background-color: seashell;
+}
+.main .mid-side{
+    border-top:8px solid #3d3838cc ;
+}
+.main .mid-side img{
+    width: 144px;
+    height: 253px;
+}
+.mid-side::after {
+    content: "昙花一现,书为永恒";
+    color: #cfb53b;
+    text-align: center;
+    font-style: oblique;
+    display: block;
+    width:144px;
+    height:36px ;
+    line-height: 36px;
+    background-color: black;
+}
+/* 轮播图 */
+
+.main .slidshow{
+    display: block;
+    width: 345px; 
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+}
+.main .slidshow .slidshow-img{
+    width: 500%;
+    height: 300px;
+    overflow: hidden;
+    transition: 1s;
+}
+
+
+
+.main .slidshow .slidshow-img img{
+    float: left;
+    width: 345px;
+    height: 300px;
+}
+.img-message {
+    width: 345px;
+    height:30px ;
+}
+.img-message ul li {
+    float: right;
+    margin: 5px 2px;
+    color: blanchedalmond;
+}
+
+.banner-title li:hover{
+    cursor: pointer;
+
+}
+.banner-title .active{
+    cursor: pointer;
+    color: white;
+}
+.xiaoyang {
+    float: left;
+    width: 100%;
+    height: 322px;
+    overflow: hidden;
+    background: url("../img/glassland.jpg") no-repeat 100%;
+    background-size: cover;
+}
+.xiaoyang.stage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4a96ee;
+    overflow: hidden;
+}
+.sheep{
+    position: absolute;
+    width: 164px;
+    height: 122px;
+    background: url(../img/sheep.png) 0 0 no-repeat;
+    right: 0;
+    bottom: 0;
+    cursor: grabbing;
+}
+
+.footer {
+    height: 70px;
+    background: url('../img/bg_footer.jpg') center ;
+    background-size: cover;
+    white-space: nowrap;
+}
+.footer .content{
+    width: 1000px;
+    height: 0px;
+    margin: 0 auto;
+    z-index: 100;
+}
+.footer .content li{
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 50px;
+}
+
