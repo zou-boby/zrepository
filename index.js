@@ -3,13 +3,22 @@ var bird = {
     bgSpeed : 2,
     worldStyle : 'blue',
     birdTop : 235,
-    birdPosition : 0,
+    birdPositionY : 0,
+    birdSpeed : 2,
+    birdFlag : true,
 
     init : function() {
         this.initData();
+        this.animition();
+        this.handerStart();
+    },
+    animition : function () {
         var count = 0;
         setInterval(() => {
             this.bgMove();
+            if (!this.birdFlag) {
+                this.birdDrop();
+            }
             // count ++ ;
             if(++count % 10 == 0) {
                 this.starGame();
@@ -20,8 +29,9 @@ var bird = {
     },
     initData : function () {
         this.el = document.getElementById('game');
-        this.start = document.getElementsByClassName('start')[0];
+        this.oStart = document.getElementsByClassName('start')[0];
         this.oBird = document.getElementsByClassName('bird')[0];
+        this.oScore = document.getElementsByClassName('score')[0];
     },
     
     bgMove : function () {
@@ -34,9 +44,9 @@ var bird = {
     starGame : function () {
         // var self = this;
         // setInterval(function(){
-            this.start.classList.remove('start-' + this.worldStyle);
+            this.oStart.classList.remove('start-' + this.worldStyle);
             this.worldStyle = this.worldStyle === 'white' ? 'blue' : 'white';
-            this.start.classList.add('start-' + this.worldStyle);
+            this.oStart.classList.add('start-' + this.worldStyle);
         // },500) 
     },
     birdJump : function () {
@@ -45,7 +55,22 @@ var bird = {
     },
     birdFly : function (count) {
         this.oBird.style.backgroundPositionX = count % 3 * -30 + 'px' ;
+    },
+
+    handerStart : function ()  {
+        var self = this;
+        this.oStart.onclick = function () {
+            self.oScore.style.display = 'block';
+            self.oStart.style.display = 'none';
+            self.oBird.style.left = 80 + 'px';
+            self.birdFlag = false;
+        }
+    },
+    birdDrop : function () {
+        this.birdPositionY += this.birdSpeed;
+        this.oBird.style.top = this.birdPositionY;
     }
+
 }
 
 
